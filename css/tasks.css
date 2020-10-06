@@ -45,6 +45,12 @@ button:focus {
   color: #ececec;
 }
 
+.container {
+  display: flex;
+  justify-content: center;
+  padding: 20%;
+}
+
 .form {
   background-color: #ececec;
   border: none;
@@ -71,13 +77,20 @@ button:focus {
   transform: translate(-50%, -50%);
 }
 
-.div-img {
+#gallery {
+  padding: 10%;
+  margin: 0;
   display: flex;
-  justify-content: space-around;
 }
 
-#gallery {
-  display: flex;
+.gallery__images {
+  width: 100%;
+  height: 100%;
+  border-radius: 5px;
+}
+
+.gallery__list:not(:last-child) {
+  margin-right: 10px;
 }
 
 .h1 {

@@ -1,42 +1,33 @@
 const images = [
   {
-    src:
+    url:
       "https://images.pexels.com/photos/140134/pexels-photo-140134.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
     alt: "White and Black Long Fur Cat",
   },
   {
-    src:
+    url:
       "https://images.pexels.com/photos/213399/pexels-photo-213399.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
     alt: "Orange and White Koi Fish Near Yellow Koi Fish",
   },
   {
-    src:
+    url:
       "https://images.pexels.com/photos/219943/pexels-photo-219943.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
     alt: "Group of Horses Running",
   },
 ];
 
-const imagesObj = images.forEach((img) => {
-  const ulRef = document.querySelector("ul#gallery");
-  const liRef = document.createElement("li");
-  ulRef.prepend(liRef);
-  const entries = Object.entries(img);
-  for (const entry of entries) {
-    const key = entry[0];
-    const value = entry[1];
-    liRef.insertAdjacentHTML(
-      "afterbegin",
-      `<img ${key}='${value}'width="500px" height="auto"> `
-    );
-  }
-});
-
-// const ulRef = document.querySelector("ul#gallery");
+const ulRef = document.querySelector("ul#gallery");
 // const liRef = document.createElement("li");
 // ulRef.prepend(liRef);
 
-// liRef.insertAdjacentHTML("afterbegin", `<img ${images[0]}>`);
+// liRef.classList.add("gallery__list");
 
-// const a = images.forEach((a) => {
-//   console.log(a);
-// });
+const gallery = galleryList(images);
+
+function galleryList(img) {
+  return img.map(({ url, alt }) => {
+    return `<li class='gallery__list'><img class="gallery__images"src="${url}" alt="${alt}"></li>`;
+  });
+}
+
+ulRef.insertAdjacentHTML("afterbegin", `${gallery}`);
