@@ -1,5 +1,5 @@
-const listEl = document.querySelectorAll("li");
+const listEl = document.querySelectorAll('li');
 
-listEl.forEach((el) => {
-  el.classList.add("list");
+listEl.forEach(el => {
+    el.classList.add('list');
 });
